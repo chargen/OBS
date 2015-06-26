@@ -458,6 +458,16 @@ public:
         PostMessage(hwndMain, WM_COMMAND, MAKEWPARAM(ID_STARTSTOP, 0), 0);
     }
 
+    virtual void StartStream()
+    {
+        PostMessage(hwndMain, WM_COMMAND, MAKEWPARAM(ID_START, 0), 0);
+    }
+
+    virtual void StopStream()
+    {
+        PostMessage(hwndMain, WM_COMMAND, MAKEWPARAM(ID_STOP, 0), 0);
+    }
+
     virtual void StartStopPreview()
     {
         PostMessage(hwndMain, WM_COMMAND, MAKEWPARAM(ID_TESTSTREAM, 0), 0);
@@ -682,6 +692,9 @@ public:
     virtual void DisableTransitions()          { App->performTransition = false; }
     virtual void EnableTransitions()           { App->performTransition = true; }
     virtual bool TransitionsEnabled() const    { return App->performTransition; }
+
+    virtual void SetStreamUrl(CTSTR url)       {AppConfig->SetString(TEXT("Publish"), TEXT("URL"), url); }
+    virtual void SetStreamPath(CTSTR path)     {AppConfig->SetString(TEXT("Publish"), TEXT("PlayPath"), path); }
 };
 
 APIInterface* CreateOBSApiInterface()

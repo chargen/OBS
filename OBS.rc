@@ -77,7 +77,7 @@ BEGIN
     RTEXT           "Settings.Publish.Server",IDC_SERVER_STATIC,4,46,138,8
     EDITTEXT        IDC_URL,144,43,278,14,ES_AUTOHSCROLL
     RTEXT           "Settings.Publish.Playpath",IDC_PLAYPATH_STATIC,4,62,138,8
-    EDITTEXT        IDC_PLAYPATH,144,60,278,14,ES_PASSWORD | ES_AUTOHSCROLL
+    EDITTEXT        IDC_PLAYPATH,144,60,278,14,ES_AUTOHSCROLL
     CONTROL         "Settings.Publish.AutoReconnect",IDC_AUTORECONNECT,
                     "Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,77,145,10,WS_EX_RIGHT
     RTEXT           "Settings.Publish.AutoReconnectTimeout",IDC_AUTORECONNECT_TIMEOUT_STATIC,4,94,138,8

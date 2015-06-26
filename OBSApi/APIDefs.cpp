@@ -127,6 +127,8 @@ QWORD OBSGetAudioTime()         {return API->GetAudioTime();}
 CTSTR OBSGetAppPath()           {return API->GetAppPath();}
 
 void OBSStartStopStream()       {API->StartStopStream();}
+void OBSStartStream()           {API->StartStream();}
+void OBSStopStream()            {API->StopStream();}
 void OBSStartStopPreview()      {API->StartStopPreview();}
 void OBSStartStopRecording()    {API->StartStopRecording();}
 bool OBSGetStreaming()          {return API->GetStreaming();}
@@ -170,3 +172,6 @@ void OBSRemoveSettingsPane(SettingsPane *pane)  {API->RemoveSettingsPane(pane);}
 UINT OBSGetAPIVersion()                         {return 0x0103;}
 
 UINT OBSGetSampleRateHz()                       {return API->GetSampleRateHz();}
+
+void OBSSetStreamUrl(CTSTR newStreamUrl)        {API->SetStreamUrl(newStreamUrl);}
+void OBSSetStreamPath(CTSTR newStreamPath)      {API->SetStreamPath(newStreamPath);} 

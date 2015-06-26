@@ -395,6 +395,8 @@ enum
     ID_TOGGLERECORDINGREPLAYBUFFER,
     ID_TOGGLERECORDING,
     ID_STARTSTOP,
+    ID_START,
+    ID_STOP,
     ID_EXIT,
     ID_SCENEEDITOR,
     ID_DESKTOPVOLUME,
@@ -1096,6 +1098,9 @@ private:
     void ToggleCapturing();
     void ToggleRecording();
     void ToggleReplayBuffer();
+
+    void StartStreaming();
+    void StopStreaming();
 
     Scene* CreateScene(CTSTR lpClassName, XElement *data);
     void ConfigureScene(XElement *element);

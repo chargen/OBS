@@ -68,6 +68,15 @@ void OBS::ToggleCapturing()
     else
         Stop();
 }
+void OBS::StartStreaming()
+{
+    Start();
+}
+
+void OBS::StopStreaming()
+{
+    Stop();
+}
 
 void OBS::ToggleReplayBuffer()
 {

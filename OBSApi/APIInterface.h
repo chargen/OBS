@@ -119,6 +119,8 @@ public:
     virtual CTSTR GetAppPath() const=0;
 
     virtual void StartStopStream() = 0;
+    virtual void StartStream() = 0;
+    virtual void StopStream() = 0;
     virtual void StartStopPreview() = 0;
     virtual bool GetStreaming() = 0;
     virtual bool GetPreviewOnly() = 0;
@@ -201,6 +203,9 @@ public:
     virtual void DisableTransitions() = 0;
     virtual void EnableTransitions() = 0;
     virtual bool TransitionsEnabled() const = 0;
+
+    virtual void SetStreamUrl(CTSTR url) = 0;
+    virtual void SetStreamPath(CTSTR path) = 0;
 };
 
 BASE_EXPORT extern APIInterface *API;
@@ -278,6 +283,8 @@ BASE_EXPORT QWORD OBSGetAudioTime();
 BASE_EXPORT CTSTR OBSGetAppPath();
 
 BASE_EXPORT void OBSStartStopStream();
+BASE_EXPORT void OBSStartStream();
+BASE_EXPORT void OBSStopStream();
 BASE_EXPORT void OBSStartStopPreview();
 BASE_EXPORT void OBSStartStopRecording();
 BASE_EXPORT bool OBSGetStreaming();
@@ -334,6 +341,9 @@ BASE_EXPORT void OBSGetCurMicVolumeStats(float *rms, float *max, float *peak);
 
 BASE_EXPORT void OBSAddSettingsPane(SettingsPane *pane);
 BASE_EXPORT void OBSRemoveSettingsPane(SettingsPane *pane);
+
+BASE_EXPORT void OBSSetStreamUrl(CTSTR newUrl);
+BASE_EXPORT void OBSSetStreamPath(CTSTR newPath);
 
 /** gets API version.  version is formatted: 0xMMmm */
 BASE_EXPORT UINT OBSGetAPIVersion();
